@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <title>Coches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="display-1">Crea tu coche</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col p-3 m-3">
+                <h2 class="pb-3">Escoge modelo</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="plate">Matricula</label>
+                        <input type="text" class="form-control" id="plate" placeholder="1111-AAA">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="brand">Marca</label>
+                        <input type="text" class="form-control" id="brand" placeholder="Ford">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Color</label>
+                        <input type="text" class="form-control" id="color" placeholder="Rojo">
+
+                    </div>
+                    <div class="form-group v-center p-2 m-3">
+                        <button class="btn btn-primary d-block mx-auto" onclick="createCar()" type="button" value="envia">Create car</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <img src="../images/car1.png" width="100%">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center align-items-center">
+                <img src="../images/car2.png" width="100%">
+            </div>
+            <div class="col p-3 m-3">
+                <h2 class="pb-3">Escoge ruedas</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="mRueda1">Marca rueda 1</label>
+                            <input type="text" class="form-control" id="mRueda1" placeholder="Michelin">
+                        </div>
+                        <div class="col">
+                            <label for="dRueda1">Diametro rueda 1</label>
+                            <input type="text" class="form-control" id="dRueda1" placeholder="1">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="mRueda2">Marca rueda 2</label>
+                            <input type="text" class="form-control" id="mRueda2" placeholder="Michelin">
+                        </div>
+                        <div class="col">
+                            <label for="dRueda2">Diametro rueda 2</label>
+                            <input type="text" class="form-control" id="dRueda2" placeholder="1">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="mRueda3">Marca rueda 3</label>
+                            <input type="text" class="form-control" id="mRueda3" placeholder="Michelin">
+                        </div>
+                        <div class="col">
+                            <label for="dRueda3">Diametro rueda 3</label>
+                            <input type="text" class="form-control" id="dRueda3" placeholder="1">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="mRueda4">Marca rueda 4</label>
+                            <input type="text" class="form-control" id="mRueda4" placeholder="Michelin">
+                        </div>
+                        <div class="col">
+                            <label for="dRueda4">Diametro rueda 4</label>
+                            <input type="text" class="form-control" id="dRueda4" placeholder="1">
+                        </div>
+                    </div>
+                    <div class="form-group v-center p-2 m-3">
+                        <button class="btn btn-primary d-block mx-auto" onclick="addWheels()" type="button" value="envia">Añade ruedas</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="container mt-4" id="cardCar">
+        <div class="font-weight-bold h4" id="car">
+        </div>
+        <div>
+            <div class="row m-3">
+
+                <div class="col">
+                    <p id="infoPlate"></p>
+                </div>
+
+                <div class="col">
+                    <p id="infoBrand"></p>
+                </div>
+
+                <div class="col">
+                    <p id="infoColor"></p>
+                </div>
+
+            </div>
+        </div>
+        <div class="font-weight-bold h4" id="wheel"></div>
+        <div class="row">
+            <div class="col">
+                <p class="h6" id="infoWheel1"></p>
+            </div>
+            <div class="col">
+                <p class="h6" id="infoWheel2"></p>
+            </div>
+            <div class="col">
+                <p class="h6" id="infoWheel3"></p>
+            </div>
+            <div class="col">
+                <p class="h6" id="infoWheel4"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- js programa -->
+    <script src="../models/car.js"></script>
+    <script src="../models/wheel.js"></script>
+    <script src="../controllers/controller.js"></script>
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+</body>
+
+</html>
